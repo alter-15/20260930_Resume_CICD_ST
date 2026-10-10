@@ -4,30 +4,33 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="noindex, nofollow" name="robots"/>
-  <meta content="课程练习：个人介绍、技能与作品门户。" name="description"/>
+  <!-- 网站描述：会出现在搜索引擎结果里，更新简历时顺手改成自己的介绍 -->
+  <meta content="杨同学的个人主页：人工智能技术应用专业，昇腾AI应用开发方向。" name="description"/>
   <title>
-   我的个人主页
+   杨同学 · 个人主页
   </title>
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
   <!-- CSS 负责颜色、字体、布局；defer 让 JavaScript 在 HTML 解析完成后执行。 -->
   <link href="styles.css" rel="stylesheet"/>
-   <script src="works-data.js" defer></script>
+  <script src="works-data.js" defer></script>
   <script src="works-render.js" defer></script>
   <script src="app.js" defer></script>
  </head>
  <body>
+  <!-- 无障碍跳转链接：键盘用户可直接跳到正文 -->
   <a class="skip-link" href="#main">
    跳到正文
   </a>
-  <!-- 第 4 课新增①：顶部阅读进度条，宽度由 JavaScript 控制 -->
+  <!-- 顶部阅读进度条，宽度由 app.js 控制 -->
   <div class="reading-progress" id="reading-progress">
   </div>
+
+  <!-- ============ 顶部导航：链接指向各栏目的锚点，新增栏目时在这里同步加入口 ============ -->
   <header class="site-header">
    <div class="container header-inner">
     <a class="brand" href="#about">
      我的主页
     </a>
-    <!-- href="#栏目ID" 是原生锚点：即使不加载 JavaScript，也能跳到对应栏目。 -->
     <nav aria-label="主导航">
      <a href="#about">
       关于
@@ -36,7 +39,7 @@
       经历
      </a>
      <a href="#projects">
-      科研
+      项目
      </a>
      <a href="#skills">
       技能
@@ -45,54 +48,67 @@
       作品
      </a>
      <a href="#teaching">
-      教学
+      目标
      </a>
      <a href="#publications">
-      成果
+      记录
      </a>
     </nav>
    </div>
   </header>
+
   <main id="main">
-   <!-- HTML 练习：修改姓名、研究方向、照片路径和联系方式。 -->
+   <!-- ============ 关于：姓名、身份、学校、学习方向、基本信息都在这里改 ============ -->
    <section class="hero" id="about">
     <div class="container">
      <div class="hero-top">
       <div class="hero-copy">
+       <!-- 姓名：大字是中文名，span 里是英文/拼音 -->
        <h1>
         杨同学
         <span>
          yangyusheng
         </span>
        </h1>
+       <!-- 一句话身份 -->
        <p class="hero-role">
-        软件技术专业学生 · 前端开发学习者
+        人工智能技术应用专业学生 · 昇腾AI应用开发方向
        </p>
+       <!-- 学校与班级 -->
        <p class="hero-school">
-        广东科学技术职业学院 · 25昇腾AI应用开发
+        广东科学技术职业学院
+        <br/>
+        25昇腾AI应用开发
        </p>
       </div>
       <div class="hero-visual">
        <figure>
-        <img alt="个人头像占位图，请替换为自己的图片" height="220" src="assets/avatar.svg" width="220"/>
+        <!-- 头像：准备好照片后，把 src 改成 assets/portrait.png，并更新 alt 说明 -->
+        <img alt="杨同学的头像占位图，请替换为自己的照片" height="220" src="assets/avatar.svg" width="220"/>
        </figure>
       </div>
      </div>
+     <!-- 学习方向 -->
      <div class="research-direction" id="research-direction">
       <span class="eyebrow">
        学习方向
       </span>
       <p>
-       HTML5、CSS3、JavaScript，正在学习 Git、数据库与网站部署。
+       HTML/CSS/JavaScript、Python，
+       <strong>
+        昇腾AI应用开发方向
+       </strong>
+       ，正在学习大模型与智能体应用开发。
       </p>
      </div>
+     <!-- 基本信息：每一格是一个 div，span 是标签，p 是内容 -->
      <div class="profile-details">
       <div>
        <span>
         学习阶段
        </span>
        <p>
-        在校学习
+        在校学习（2025年9月入学）
        </p>
       </div>
       <div>
@@ -100,7 +116,7 @@
         所在城市
        </span>
        <p>
-        珠海
+        珠海 · 金湾区
        </p>
       </div>
       <div>
@@ -108,7 +124,7 @@
         联系
        </span>
        <p>
-        请填写可公开的联系方式
+        123456789
        </p>
       </div>
       <div>
@@ -122,32 +138,34 @@
      </div>
     </div>
    </section>
-   <!-- 每个栏目复用 section → container → 标题/内容 的结构，统一由 CSS 控制样式。 -->
+
+   <!-- ============ 教育经历：复制一个 experience-item 即可增加一条 ============ -->
    <section class="section" id="experience">
     <div class="container">
      <header class="section-heading">
       <h2>
-       教育与工作经历
+       教育经历
       </h2>
      </header>
      <div class="section-content">
-      <!-- TASK-HTML：复制 experience-item 可增加一条自己的经历。 -->
       <div class="experience-item">
        <p class="experience-heading">
         <strong>
-         我的学校 · 软件技术专业
+         广东科学技术职业学院 · 人工智能技术应用专业
         </strong>
         <time>
-         在读
+         2025.09 至今
         </time>
        </p>
        <p class="experience-detail">
-        学习网页开发，用项目记录成长。
+        昇腾AI应用开发方向，学习前端开发、Python 与 AI 应用开发，用项目记录成长。
        </p>
       </div>
      </div>
     </div>
    </section>
+
+   <!-- ============ 项目经历：每个 article 是一个项目，复制可增加 ============ -->
    <section class="section" id="projects">
     <div class="container">
      <header class="section-heading">
@@ -161,15 +179,17 @@
         <time>
          课程练习
         </time>
-        个人主页
+        贪吃蛇小游戏开发
        </h3>
        <p>
-        项目内容：制作自己的网页，展示资料与作品，记录修改、测试与发布过程。
+        项目内容：使用 HTML/CSS/JavaScript 实现贪吃蛇小游戏，完成蛇身移动、随机食物生成、碰撞判定与计分等基础玩法。
        </p>
       </article>
      </div>
     </div>
    </section>
+
+   <!-- ============ 技能：每个 li 是一类技能 ============ -->
    <section class="section" id="skills">
     <div class="container">
      <header class="section-heading">
@@ -181,26 +201,28 @@
       <ul class="skills-list">
        <li>
         <strong>
-         网页内容
+         前端基础：
         </strong>
-        HTML5 结构、图片、链接。
+        HTML、CSS、JavaScript，能完成静态页面与基础交互。
        </li>
        <li>
         <strong>
-         页面样式
+         AI 与编程：
         </strong>
-        CSS3 字体、颜色、响应式布局。
+        Python、昇腾AI应用开发。
        </li>
        <li>
         <strong>
-         开发过程
+         办公工具：
         </strong>
-        JavaScript、Git、检查与部署。
+        熟练使用 WPS 文字、表格与演示文稿。
        </li>
       </ul>
      </div>
     </div>
    </section>
+
+   <!-- ============ 作品门户：课程后续项目，做完一个替换一个 ============ -->
    <section class="section" id="portfolio">
     <div class="container">
      <header class="section-heading">
@@ -208,11 +230,10 @@
        作品门户
       </h2>
       <p class="works-notice">
-       以下为教学示例，完成后可替换为自己的作品。
+       以下为课程系列项目，完成后可替换为自己的作品链接与截图。
       </p>
      </header>
-     <!-- 第 5 课新增：筛选与排序工具条。里面的按钮由 JavaScript 生成，
-          不写 JS 时这里是空的，页面照常显示全部作品。 -->
+     <!-- 筛选与排序工具条：按钮由 JavaScript 生成，不写 JS 时页面照常显示全部作品。 -->
      <div class="works-toolbar">
       <div class="works-tags" id="works-tags">
       </div>
@@ -284,33 +305,37 @@
      </ol>
     </div>
    </section>
+
+   <!-- ============ 本学期目标：在 li 里增删即可 ============ -->
    <section class="section" id="teaching">
     <div class="container">
      <header class="section-heading">
       <h2>
-       学习与实践
+       本学期目标
       </h2>
      </header>
      <div class="section-content">
       <div class="teaching-group">
        <h3>
-        本学期目标
+        我要做到
        </h3>
        <ol>
         <li>
-         每次课完成一个可运行的小改动。
+         掌握 HTML、CSS、JavaScript 基础，能独立做出静态网页与简单交互。
         </li>
         <li>
-         能解释自己修改的 HTML、CSS 和 JavaScript。
+         学好 Python 与昇腾AI应用开发，完成至少一个 AI 小项目。
         </li>
         <li>
-         使用 Git 记录版本，让作品能被别人访问。
+         熟练使用 Git 与 CI/CD 流程，让每个作品都能发布到网上。
         </li>
        </ol>
       </div>
      </div>
     </div>
    </section>
+
+   <!-- ============ 学习记录：每完成一件事就加一条 li ============ -->
    <section class="section" id="publications">
     <div class="container">
      <header class="section-heading">
@@ -325,10 +350,13 @@
        </h3>
        <ol class="references">
         <li>
-         完成第一张个人主页。
+         完成第一张个人主页，并通过 GitHub Actions CI/CD 自动发布上线。
         </li>
         <li>
-         后续在这里补充自己的真实成果。
+         完成贪吃蛇小游戏开发练习。
+        </li>
+        <li>
+         后续在这里持续补充自己的项目与成果。
         </li>
        </ol>
       </div>
@@ -336,12 +364,15 @@
     </div>
    </section>
   </main>
-  <!-- 第 4 课新增：这两块由 JavaScript 控制，不写 JS 时它们不会出现 -->
+
+  <!-- 以下两块由 app.js 控制：当前栏目提示与返回顶部按钮 -->
   <p aria-live="polite" class="section-indicator" id="section-indicator">
   </p>
   <button aria-label="返回页面顶部" class="to-top" id="to-top" type="button">
    ↑
   </button>
+
+  <!-- 页脚 -->
   <footer>
    <div class="container footer-inner">
     <a href="#about">
